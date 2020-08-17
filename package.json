@@ -1,0 +1,33 @@
+{
+  "name": "sl-starter-example",
+  "version": "0.1.0",
+  "bin": {
+    "sl-starter-example": "bin/sl-starter-example.js"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc && cp package.json dist/ && cd dist && npm install --only=production && zip -r ../lambdas.zip resources/* node_modules/*",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "deploy": "npm run build && cdk deploy '*' --require-approval 'never'"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.57.0",
+    "@types/jest": "^25.2.1",
+    "@types/node": "10.17.5",
+    "jest": "^25.5.0",
+    "ts-jest": "^25.3.1",
+    "aws-cdk": "1.57.0",
+    "ts-node": "^8.1.0",
+    "typescript": "~3.7.2",
+    "@aws-cdk/core": "1.57.0",
+    "@aws-cdk/aws-codepipeline": "1.57.0",
+    "@aws-cdk/aws-codepipeline-actions": "1.57.0",
+    "@aws-cdk/pipelines": "1.57.0",
+    "@aws-cdk/aws-codecommit": "1.57.0",
+    "@aws-cdk/aws-codestarnotifications": "1.57.0"
+  },
+  "dependencies": {
+    "source-map-support": "^0.5.16"
+  }
+}
